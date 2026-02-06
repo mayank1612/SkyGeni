@@ -40,5 +40,4 @@ coverage/
 *.local
 .claude/
 
-# Original assignment data (using /data instead)
-skygeni-assignment-data/
+

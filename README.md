@@ -2,6 +2,19 @@
 
 A single-page dashboard that helps CROs answer: *"Why are we behind (or ahead) on revenue this quarter, and what should we focus on right now?"*
 
+---
+
+## Live Demo
+
+| | URL |
+|--|-----|
+| **Frontend** | https://sky-geni-sigma.vercel.app/ |
+| **Backend API** | https://skygeni-6vex.onrender.com/api |
+
+> **Note:** Backend is hosted on Render's free tier and may take ~30 seconds to wake up after periods of inactivity.
+
+---
+
 ## Screenshots
 
 ![Dashboard Overview](./sample-ui-screenshot.png)

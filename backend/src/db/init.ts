@@ -1,4 +1,5 @@
-import initSqlJs, { Database as SqlJsDatabase } from 'sql.js';
+import initSqlJs from 'sql.js';
+import type { Database as SqlJsDatabase } from 'sql.js';
 import fs from 'fs';
 import path from 'path';
 import { Account, Rep, Deal, Activity, Target } from '../types';
@@ -64,11 +65,11 @@ export async function initializeDatabase(): Promise<void> {
 
   // Load data from JSON files
   const possiblePaths = [
-    path.join(__dirname, '../../data'),
-    path.join(__dirname, '../../../data'),
-    path.join(__dirname, '../../../skygeni-assignment-data'),
-    path.join(process.cwd(), 'data'),
-    path.join(process.cwd(), '../skygeni-assignment-data'),
+    path.join(__dirname, '../data'),           // Production: dist/data
+    path.join(__dirname, '../../data'),        // Dev: backend/data
+    path.join(__dirname, '../../../data'),     // Alternative
+    path.join(process.cwd(), 'data'),          // CWD/data
+    path.join(process.cwd(), 'dist/data'),     // CWD/dist/data
   ];
 
   let finalDataDir = '';

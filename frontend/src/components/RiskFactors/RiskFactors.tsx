@@ -1,4 +1,4 @@
-import { Box, Paper, Typography, Skeleton, Chip, List, ListItem, ListItemIcon, ListItemText, Collapse } from '@mui/material';
+import { Box, Paper, Typography, Skeleton, List, ListItem, ListItemText, Collapse } from '@mui/material';
 import { useState } from 'react';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -62,18 +62,10 @@ export function RiskFactors({ data, loading }: RiskFactorsProps) {
         <List dense>
           {data.staleDeals.bySegment.map((segment) => (
             <ListItem key={segment.segment} sx={{ py: 0.5 }}>
-              <ListItemIcon sx={{ minWidth: 36 }}>
-                <Chip
-                  label={segment.segment}
-                  size="small"
-                  variant="outlined"
-                  sx={{ fontSize: '0.7rem', height: 20 }}
-                />
-              </ListItemIcon>
               <ListItemText
-                primary={`${segment.count} deals`}
-                secondary={`${formatCurrency(segment.valueAtRisk)} at risk`}
-                primaryTypographyProps={{ variant: 'body2' }}
+                primary={segment.segment}
+                secondary={`${segment.count} deals, ${formatCurrency(segment.valueAtRisk)} at risk`}
+                primaryTypographyProps={{ variant: 'body2', fontWeight: 500 }}
                 secondaryTypographyProps={{ variant: 'caption' }}
               />
             </ListItem>
